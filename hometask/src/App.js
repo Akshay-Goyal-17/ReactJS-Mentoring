@@ -6,6 +6,7 @@ const welcomeMessage = React.createElement(
 	'h1', 
 	{
 		className: 'welcome',
+		key:'0',
 		align: 'center',
 		style: 
 		{
@@ -31,13 +32,13 @@ function ShowGitHubLink(props) {
 function App() {
 return (
 	[welcomeMessage,
-	<table className="table" style={{marginLeft:'20px'}}>
+	<table key="1" className="table" style={{marginLeft:'20px'}}>
 	<tbody>
 		<HelloComponent/>
 		<HelloPureComponent/>
 	</tbody>
 	</table>,
-	<ShowGitHubLink link={gitHubLink}/>]
+	<ShowGitHubLink key="2" link={gitHubLink}/>]
 );
 }
 

@@ -17,5 +17,23 @@
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
-  }
+  },
+  "name": "reactjs-mentoring",
+  "version": "1.0.0",
+  "description": "React Mentoring App",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest",
+    "start": "webpack-dev-server --open --config webpack.config.dev.js",
+    "build": "webpack --config webpack.config.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Akshay-Goyal-17/ReactJS-Mentoring.git"
+  },
+  "author": "Akshay Goyal",
+  "bugs": {
+    "url": "https://github.com/Akshay-Goyal-17/ReactJS-Mentoring/issues"
+  },
+  "homepage": "https://github.com/Akshay-Goyal-17/ReactJS-Mentoring#readme"
 }

@@ -21,7 +21,7 @@
   "name": "reactjs-mentoring",
   "version": "1.0.0",
   "description": "React Mentoring App",
-  "main": "App.js",
+  "main": "index.js",
   "scripts": {
     "test": "jest",
     "start": "webpack-dev-server --open --config webpack.config.dev.js",

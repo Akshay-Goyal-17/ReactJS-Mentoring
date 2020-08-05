@@ -38,12 +38,12 @@ module.exports = {
     },
     resolve: { extensions: ["*", ".js", ".jsx"] },
     devServer: {
-        contentBase:  path.resolve(__dirname, 'dist'),
+        contentBase:  path.resolve(__dirname, 'public'),
         port: 3000
       },
     plugins: [
     new HtmlWebpackPlugin({
-        template: "src/index.html"
+        template: "public/index.html"
     })
     ]
 };

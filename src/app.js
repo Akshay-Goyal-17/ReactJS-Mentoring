@@ -1,24 +1,18 @@
 import React from 'react';
-
-const welcomeMessage = React.createElement(
-	'h1', 
-	{
-		className: 'welcome',
-		align: 'center',
-		style: 
-		{
-			color:'blue'
-		}
-	}, 
-	'Hello World!'
-);
+import MovieCard from './components/common/movieCard/MovieCard';
+import Header from './components/homepage/header';
+import Footer from './components/common/footer/Footer';
+import SearchControl from './components/common/searchControl/SearchControl';
+import './styles/styles.less'
 
 function App() {
     return (
         <div>
-            {welcomeMessage}
+			<Header/>
+            <SearchControl />
+			<Footer />
         </div>
     );
 }
-    
+
 export default App;

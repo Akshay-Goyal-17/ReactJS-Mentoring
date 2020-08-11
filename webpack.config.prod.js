@@ -22,16 +22,20 @@ module.exports = {
                 use: ['babel-loader']
             },
             {
-                test: /\.(sa|sc|c)ss$/,
-                use: ['style-loader', 'css-loader', 'sass-loader'],
-            },
-            {
                 test: /\.(png|jpe?g|gif)$/i,
                 use: [
                     {
                         loader: 'file-loader',
                     },
                 ],
+            },
+            {
+                test: /\.less$/,
+                use: [
+                    { loader: 'style-loader' },
+                    { loader: 'css-loader' },
+                    { loader: 'less-loader' }
+                ]
             },
         ]
     },

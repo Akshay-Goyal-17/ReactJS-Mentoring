@@ -5,7 +5,7 @@ import './TabControl.less';
 
 export default function TabControl (props) {
     const itemList = props.tabItems.map((item)=>
-        <TabItem key={item.id} id={item.id} class="left-align tab-item" title={item.title}/>);
+        <TabItem key={item.id} id={item.id} enabled={item.enabled} class="left-align tab-item" title={item.title}/>);
 
     return ( 
         <div className="tab-control clearfix">

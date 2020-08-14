@@ -14,33 +14,28 @@ const contextMenuItems = [
     }
 ];
 
-function showContextMenu() {
+function onShowContextMenuClicked() {
     // remove hidden class from ContextMenu div
 }
 
 export default function MovieCard(props) {
-    var id = "movie_" + props.id;
+    var id = "movie_" + props.movie.id;
 
     return (
         <div id={id} className="movie-poster-container left-align clearfix">
-            <img className="movie-poster-image" src={props.imgUri}/>
-            <div className="movie-poster-more" onClick={() => showContextMenu()}>&#8226; &#8226; &#8226;</div>
-            <ContextMenu items={contextMenuItems}/>
+            <img className="movie-poster-image" src={props.movie.image}/>
+            <div className="movie-poster-more" onClick={() => onShowContextMenuClicked()}>&#8226; &#8226; &#8226;</div>
             <div className="movie-poster-info">
                 <div className="left-align">
-                    <p className="movie-poster-info-title">{props.title}</p>
-                    <p>{props.genre}</p>
+                    <p className="movie-poster-info-title">{props.movie.title}</p>
+                    <p>{props.movie.genre}</p>
                 </div>
-                <div className="right-align movie-poster-info-year">{props.year}</div>
+                <div className="right-align movie-poster-info-year">{props.movie.year}</div>
             </div> 
         </div>
     );
 }
 
 MovieCard.propTypes = {
-    id: PropTypes.number,
-    imgUri: PropTypes.string,
-    title: PropTypes.string,
-    year: PropTypes.number,
-    genre: PropTypes.string,
+    movie: PropTypes.object.isRequired
 }

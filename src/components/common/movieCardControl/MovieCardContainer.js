@@ -9,7 +9,8 @@ const movieCount = 39;
 const tabItems = [
     {
         id: 1,
-        title: "ALL"
+        title: "ALL",
+        enabled: true
     },
     {
         id: 2,
@@ -36,48 +37,66 @@ const movieList =
         image: "./images/posters/1.jpg",
         title: "Pulp Fiction",
         year: 2004,
-        genre: "Action & Adventure"
+        genre: "Action & Adventure",
+        duration: 154,
+        rating: 4.3,
+        description: ""
     },
     {
         id: 2,
         image: "./images/posters/2.jpg",
         title: "Bohemian Rhapsody",
         year: 2003,
-        genre: "Drama, Biography, Music"
+        genre: "Drama, Biography, Music",
+        duration: 154,
+        rating: 4.3,
+        description: ""
     },
     {
         id: 3,
         image: "./images/posters/3.jpg",
         title: "Kill Bill: Vol 2",
         year: 1994,
-        genre: "Oscar winning Movie"
+        genre: "Oscar winning Movie",
+        duration: 154,
+        rating: 4.3,
+        description: ""
     },
     {
         id: 4,
         image: "./images/posters/4.jpg",
         title: "Avengers: Infinity War",
         year: 2004,
-        genre: "Action & Adventure"
+        genre: "Action & Adventure",
+        duration: 154,
+        rating: 4.3,
+        description: ""
     },
     {
         id: 5,
         image: "./images/posters/5.jpg",
         title: "Inception",
         year: 2003,
-        genre: "Action & Adventure"
+        genre: "Action & Adventure",
+        duration: 154,
+        rating: 4.3,
+        description: ""
     },
     {
         id: 6,
         image: "./images/posters/6.jpg",
         title: "Reservoir Dogs",
         year: 1994,
-        genre: "Oscar winning Movie"
+        genre: "Oscar winning Movie",
+        duration: 154,
+        rating: 4.3,
+        description: ""
     }
 
 ];
 
 const movieCardList = movieList.map((movie)=>
-    <MovieCard key={movie.id} id={movie.id} imgUri={movie.image} title={movie.title} year={movie.year} genre={movie.genre} />);
+    <MovieCard key={movie.id} movie={movie} />);
 
 export default function MovieCardContainer(){
     return(

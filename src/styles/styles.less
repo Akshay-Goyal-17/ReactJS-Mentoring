@@ -1,0 +1,53 @@
+@import './colors.less';
+
+.container {
+    margin: 20px;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.left-align {
+    float: left;
+}
+
+.right-align {
+    float: right;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 100;
+    color: #ffffff;
+    margin: 20px;
+}
+
+input[type="text"] {
+    background: @dark-gray-transparent;
+    border: none;
+    padding: 15px;
+    font-size: 1.25em;
+    color: @white;
+    margin: 20px;
+    margin-right: 10px;
+    width: 60%;
+    border-radius: 5px;
+}
+
+::placeholder {
+    color: @white-transparent;
+    opacity: 0.5;
+}
+
+.separator {
+    background-color: @light-gray;
+    height: 10px;
+    width: 100%;
+}
+
+.hidden{
+    display: none;
+}

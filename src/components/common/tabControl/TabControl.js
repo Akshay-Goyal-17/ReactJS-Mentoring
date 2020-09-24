@@ -1,20 +1,37 @@
-import React from 'react';
+import React from "react";
 import PropTypes from "prop-types";
-import TabItem from "./TabItem";
-import './TabControl.less';
+import './style.less';
+import TabItem from "../TabItem/TabItem";
 
-export default function TabControl (props) {
-    const itemList = props.tabItems.map((item)=>
-        <TabItem key={item.id} id={item.id} enabled={item.enabled} class="left-align tab-item" title={item.title}/>);
+class TabControl extends React.Component {
+    constructor(props){
+        super(props);
 
-    return ( 
-        <div className="tab-control clearfix">
-            {itemList}
-            {props.children}
-        </div>
-    );
+        this.state = {enabledTab: props.enabledTab};
+        this.tabItems = props.tabItems;
+        this.children = props.children
+    }
+
+    tabItemClicked(tabId) {
+        // change tab enabled mark
+        this.setState({enabledTab: tabId});
+    }
+
+    render() {
+        var itemList = this.tabItems.map((item)=>
+            <TabItem key={item.id} class="left-align" enabled={this.state.enabledTab === item.id} title={item.title} onClick={()=>this.tabItemClicked(item.id)}/>);
+
+        return ( 
+            <div className="tab-control clearfix">
+                {itemList}
+                {this.children}
+            </div>
+        );
+    }
 }
 
 TabControl.propTypes = {
-    tabItems: PropTypes.array.isRequired,
+    tabItems: PropTypes.array,
 }
+
+export default TabControl;

@@ -1,48 +1,51 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-	
-process.env.NODE_ENV = "production";
+const path = require("path");
+const HtmlWebPackPlugin = require("html-webpack-plugin");
+process.env.NODE_ENV = "production"; 
 
 module.exports = {
-    mode: 'production',
-    entry: path.resolve(__dirname, 'src/index'),
-    output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
-    },
-    optimization: {
-        minimize: true,
-    },
-    module: {
-        rules: [
-            {
-                exclude: /node_modules/,
-                test: /\.js$/,
-                include: path.resolve(__dirname, 'src'),
-                use: ['babel-loader']
-            },
-            {
-                test: /\.(png|jpe?g|gif)$/i,
-                use: [
-                    {
-                        loader: 'file-loader',
-                    },
-                ],
-            },
-            {
-                test: /\.less$/,
-                use: [
-                    { loader: 'style-loader' },
-                    { loader: 'css-loader' },
-                    { loader: 'less-loader' }
-                ]
-            },
+  mode: "production",
+  optimization: {
+    minimize: true
+  },
+  entry: "./src/index.js",
+  output: {
+    path: path.resolve(__dirname, "dist"),
+    filename: "bundle.js",
+  },
+  resolve: {
+    extensions: [".js", ".jsx"],
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+        },
+      },
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: "html-loader",
+          },
+        ],
+      },
+      {
+        test: /\.(less|css)$/,
+        use: [
+            { loader: 'style-loader' },
+            { loader: 'css-loader' },
+            { loader: 'less-loader' }
         ]
-    },
-    resolve: { extensions: ["*", ".js", ".jsx"] },
-    plugins: [
-        new HtmlWebpackPlugin({
-            template: "public/index.html"
-        })
-    ]
+      },
+    ],
+  },
+  plugins: [
+    new HtmlWebPackPlugin({
+      template: "./public/index.html",
+      filename: "./index.html",
+    }),
+  ],
 };

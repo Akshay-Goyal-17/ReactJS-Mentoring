@@ -1,25 +1,7 @@
-@import './colors.less';
-
-.container {
-    margin: 20px;
-}
-
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-.left-align {
-    float: left;
-}
-
-.right-align {
-    float: right;
-}
+@import "./colors.less";
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 2.5em;
     font-weight: 100;
     color: #ffffff;
     margin: 20px;
@@ -31,15 +13,22 @@ input[type="text"] {
     padding: 15px;
     font-size: 1.25em;
     color: @white;
-    margin: 20px;
-    margin-right: 10px;
-    width: 60%;
+    width: 100%;
     border-radius: 5px;
 }
 
-::placeholder {
-    color: @white-transparent;
-    opacity: 0.5;
+.full-height {
+    height: 100%;
+}
+
+.modal-dialog-input {
+    background-color: @dark-gray-transparent !important;
+    margin-top: 10px !important;
+    margin-bottom: 30px !important;
+}
+
+.container {
+    margin: 20px;
 }
 
 .separator {
@@ -48,6 +37,41 @@ input[type="text"] {
     width: 100%;
 }
 
-.hidden{
+.left-align {
+    float: left;
+}
+
+.right-align {
+    float: right;
+}
+
+.center-align {
+    text-align: center;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.hidden {
     display: none;
+}
+
+.application {
+    background-image: linear-gradient(to top,rgba(0,0,0,.8) 0,rgba(0,0,0,0) 60%,rgba(0,0,0,.8) 100%);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.react-datepicker-wrapper {
+    width: 100% !important;
 }

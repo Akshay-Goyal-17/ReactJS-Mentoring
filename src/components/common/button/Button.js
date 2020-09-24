@@ -1,12 +1,15 @@
-import React from"react";
+import React from "react";
 import PropTypes from "prop-types";
-import './Button.less';
+import './style.less';
 
-export default function Button (props) {
-    return <button className={props.class}>{props.title}</button>;
+function Button (props) {
+    return <button className={props.class} onClick={props.onClick}>{props.title}</button>;
 }
-
+  
 Button.propTypes = {
     title: PropTypes.string,
-    class: PropTypes.string
+    class: PropTypes.string,
+    onClick: PropTypes.func,
 }
+
+export default Button;
